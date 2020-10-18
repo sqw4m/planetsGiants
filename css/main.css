@@ -1,0 +1,183 @@
+﻿body {
+    background: url(../imgs/spacebg.png);
+    font-family: Calibri, sans-serif;
+    font-size: 18px;
+    margin: 0;
+    text-align: justify;
+}
+
+.article_content {
+    margin: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    margin: 10px;
+    /* Шаблон для последовательного отображения контента */
+    grid-template-areas: "aside" "article" "footer";
+}
+
+aside {
+    padding: 50px;
+    grid-area: aside;
+}
+
+article {
+    grid-area: article;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* Используем медиа-запросы для конкретного девайса */
+@media (min-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr 2fr;
+        /* Размещаем наши элементы шаблона, используя колонки */
+        grid-template-areas: 
+            "aside aside" 
+            "article article" 
+            "footer footer"
+    }
+}
+
+@media (min-width: 840px) {
+    .grid {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 
+            "aside article"
+            "footer footer"
+    }
+}
+
+/* строка навигационного меню */
+nav {
+    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    background-color: black;
+    height: auto;
+    width: 90%;
+    border-bottom: 1px solid #ccc;
+    border-radius: 15px;
+    border: none;
+}
+
+/* элемент навигационного меню */
+/* имитация простой кнопки */
+nav a {
+    padding: 15px;
+    margin: 50px, 0px, 0px, 0px;
+    width: 90%;
+    color: antiquewhite;
+    text-decoration: none; /* убрать подчеркивание */
+    font-size: 18px;
+    font-family: Comic Sans MS;
+    position: center;
+    border-radius: 12px;
+}
+
+/* элемент навигационного меню, */
+/* который уже посещал пользователь */
+nav a:visited {
+    color: palevioletred;
+    background-color: mediumvioletred;
+}
+
+/* элемент навигационного меню */
+/* на который пользователь навел курсор */
+nav a:hover {
+    opacity: 1.1;
+    color: darkblue;
+    background-color: lightgoldenrodyellow;
+}
+
+/* текст ссылки навигационного меню */
+span {
+    display: inline-block;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+/* подвал */
+footer {
+    opacity: 0.7;
+    background-color: black;
+    border-top: 1px solid #ccc;
+    border-radius: 15px;
+    border: none;
+}
+
+/* поле адреса разработчика - полоса, размещенная в подвале страницы */
+address {
+    text-align: center;
+    color: white;
+    height: auto;
+    font-size: 8pt;
+    font-family: Verdana, serif;
+    font-style: normal;
+    box-sizing: border-box;
+    margin: 5px;
+}
+
+address:hover {
+    /* меняем цвет */
+    color: lightcoral;
+    /* меняем размер шрифта */
+    font-size: 10px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+/* заголовки секций главной страницы */
+h2 {
+    font-family: "Calibri Light", Verdana, serif;
+    font-size: 16pt;
+    color: lightskyblue;
+    margin-bottom: 3pt;
+}
+
+/* абзацы текста главной страницы */
+p {
+    color: antiquewhite;
+    text-align: justify;
+    margin-bottom: 0;
+    margin-top: 6pt;
+}
+
+/* список */
+ul {
+    color: antiquewhite;
+    margin-top: 0;
+    margin-bottom: 3pt;
+}
+
+/* стиль для вложенного неупорядоченного списка*/
+ul ul {
+    color: antiquewhite;
+    margin: 6px 0 0 18px;
+    padding-left: 18px;
+    text-align: justify;
+}
+
+/* изменение меню при уменьшении экрана */
+@media screen and (max-width: 840px) {
+    nav {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav a {
+        width: auto;
+    }
+
+    span {
+        display: none;
+    }
+}
+/* @media */
